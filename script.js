@@ -150,3 +150,116 @@ function likePost(event) {
 
 console.log("🐵 Welcome to Only feetMonkeys! 🐵");
 console.log("Your premium monkey content destination!");
+
+// ===== MonkeyIA Chatbot Functions =====
+
+// Chatbot responses library
+const chatbotResponses = {
+    hello: "¡Hola! 👋 Soy MonkeyIA, tu asistente. ¿Cómo te puedo ayudar?",
+    help: "Puedo ayudarte con:\n✅ Información de creadores\n✅ Suscripciones y planes\n✅ Cómo usar la plataforma\n✅ Preguntas frecuentes\n\n¿Qué necesitas?",
+    creators: "Tenemos creadores increíbles como:\n🐵 Banana Joe - @bananajoe_feet\n🐒 Coconut King - @coconut_king_toes\n🦍 Paw Master - @paw_master_pro\n\n¿Quieres conocer más?",
+    subscribe: "¡Perfecto! Nuestros planes son:\n💰 Básico: $9.99\n💰 Premium: $14.99\n💰 Elite: $19.99\n\n¿Cuál te interesa?",
+    price: "Nuestros precios por suscripción varían:\n💎 Creators populares: $9.99-$19.99\n💎 VIP: Acceso a todo por $29.99\n\n¿Necesitas más información?",
+    thanks: "¡De nada! 🐵 Estoy aquí cuando me necesites. ¿Hay algo más en lo que pueda ayudarte?",
+    bye: "¡Hasta luego! 👋 Vuelve pronto para más contenido exclusivo. 🐵",
+    default: "Interesante pregunta 🤔 Aunque soy MonkeyIA, aún estoy aprendiendo. ¿Puedo ayudarte con información sobre:\n- Creadores\n- Suscripciones\n- Cómo usar la plataforma?"
+};
+
+// Detect user intent
+function detectIntent(message) {
+    const msg = message.toLowerCase().trim();
+    
+    if (msg.includes('hola') || msg.includes('hey') || msg.includes('hi')) return 'hello';
+    if (msg.includes('ayuda') || msg.includes('help') || msg.includes('qué puedes')) return 'help';
+    if (msg.includes('creador') || msg.includes('creator') || msg.includes('influencer')) return 'creators';
+    if (msg.includes('suscri') || msg.includes('subscribe')) return 'subscribe';
+    if (msg.includes('precio') || msg.includes('price') || msg.includes('costo') || msg.includes('cuesta')) return 'price';
+    if (msg.includes('thanks') || msg.includes('gracias') || msg.includes('thx') || msg.includes('ty')) return 'thanks';
+    if (msg.includes('adiós') || msg.includes('bye') || msg.includes('chao')) return 'bye';
+    
+    return 'default';
+}
+
+// Toggle chatbot window
+function toggleChatbot() {
+    const chatWindow = document.getElementById('chatbotWindow');
+    chatWindow.classList.toggle('active');
+    
+    if (chatWindow.classList.contains('active')) {
+        setTimeout(() => {
+            document.getElementById('chatbotInput').focus();
+        }, 100);
+    }
+}
+
+// Close chatbot window
+function closeChatbot() {
+    const chatWindow = document.getElementById('chatbotWindow');
+    chatWindow.classList.remove('active');
+}
+
+// Handle chat input on Enter key
+function handleChatInput(event) {
+    if (event.key === 'Enter') {
+        sendMessage();
+    }
+}
+
+// Send message
+function sendMessage() {
+    const input = document.getElementById('chatbotInput');
+    const message = input.value.trim();
+    
+    if (!message) return;
+    
+    // Add user message to chat
+    addUserMessage(message);
+    
+    // Clear input
+    input.value = '';
+    input.focus();
+    
+    // Simulate bot thinking and send response
+    setTimeout(() => {
+        const intent = detectIntent(message);
+        const response = chatbotResponses[intent];
+        addBotMessage(response);
+    }, 500);
+}
+
+// Add user message to chat
+function addUserMessage(message) {
+    const messagesContainer = document.getElementById('chatbotMessages');
+    const messageDiv = document.createElement('div');
+    messageDiv.classList.add('message', 'user-message');
+    messageDiv.innerHTML = `<p>${escapeHtml(message)}</p>`;
+    messagesContainer.appendChild(messageDiv);
+    
+    // Scroll to bottom
+    messagesContainer.scrollTop = messagesContainer.scrollHeight;
+}
+
+// Add bot message to chat
+function addBotMessage(message) {
+    const messagesContainer = document.getElementById('chatbotMessages');
+    const messageDiv = document.createElement('div');
+    messageDiv.classList.add('message', 'bot-message');
+    messageDiv.innerHTML = `<p>${message.replace(/\n/g, '<br>')}</p>`;
+    messagesContainer.appendChild(messageDiv);
+    
+    // Scroll to bottom
+    messagesContainer.scrollTop = messagesContainer.scrollHeight;
+}
+
+// Escape HTML to prevent XSS
+function escapeHtml(text) {
+    const map = {
+        '&': '&amp;',
+        '<': '&lt;',
+        '>': '&gt;',
+        '"': '&quot;',
+        "'": '&#039;'
+    };
+    return text.replace(/[&<>"']/g, m => map[m]);
+}
+

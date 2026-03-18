@@ -299,6 +299,41 @@
     <!-- Notification -->
     <div id="notification" class="notification"></div>
 
+    <!-- MonkeyIA Chatbot -->
+    <div class="chatbot-container">
+        <div class="chatbot-toggle" id="chatbotToggle" onclick="toggleChatbot()">
+            <span class="chatbot-icon">🐵</span>
+            <span class="chatbot-status">MonkeyIA</span>
+        </div>
+        
+        <div class="chatbot-window" id="chatbotWindow">
+            <div class="chatbot-header">
+                <div class="chatbot-title">
+                    <span class="chatbot-icon-header">🐵</span>
+                    <span>MonkeyIA Assistant</span>
+                </div>
+                <button class="chatbot-close" onclick="closeChatbot()">✕</button>
+            </div>
+            
+            <div class="chatbot-messages" id="chatbotMessages">
+                <div class="message bot-message">
+                    <p>¡Hola! 🐵 Soy MonkeyIA, tu asistente inteligente. ¿Cómo puedo ayudarte hoy?</p>
+                </div>
+            </div>
+            
+            <div class="chatbot-input-area">
+                <input 
+                    type="text" 
+                    id="chatbotInput" 
+                    class="chatbot-input" 
+                    placeholder="Escribe tu mensaje..." 
+                    onkeypress="handleChatInput(event)"
+                >
+                <button class="chatbot-send" onclick="sendMessage()">📤</button>
+            </div>
+        </div>
+    </div>
+
     <script src="script.js"></script>
 </body>
 </html>
