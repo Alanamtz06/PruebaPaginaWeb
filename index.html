@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Only feetMonkeys - Premium Monkey Content</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="navbar-container">
+            <div class="logo">
+                <span class="logo-emoji">🐵</span>
+                <span class="logo-text">Only feetMonkeys</span>
+            </div>
+            <div class="nav-links">
+                <a href="#" class="nav-link">Home</a>
+                <a href="#creators" class="nav-link">Creators</a>
+                <a href="#trending" class="nav-link">Trending</a>
+                <a href="#" class="nav-link login-btn">Login</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Welcome to Only feetMonkeys</h1>
+            <p>The ultimate platform for exclusive monkey feet content</p>
+            <button class="cta-btn" onclick="showModal()">Join Now</button>
+        </div>
+    </section>
+
+    <!-- Creators Section -->
+    <section class="creators" id="creators">
+        <h2>Featured Creators</h2>
+        <div class="creators-grid">
+            <!-- Creator Card 1 -->
+            <div class="creator-card">
+                <div class="creator-header">
+                    <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='50' fill='%238B4513'/%3E%3Ctext x='50' y='60' font-size='50' text-anchor='middle' fill='white'%3E🐵%3C/text%3E%3C/svg%3E" alt="Creator Avatar" class="creator-avatar">
+                    <div class="creator-info">
+                        <h3>Banana Joe</h3>
+                        <p class="creator-handle">@bananajoe_feet</p>
+                    </div>
+                </div>
+                <div class="creator-stats">
+                    <span class="stat">👥 12.5K Subs</span>
+                    <span class="stat">📸 248 Posts</span>
+                </div>
+                <p class="creator-bio">Professional feet model 🍌 Exclusive content daily</p>
+                <button class="subscribe-btn" onclick="subscribe('Banana Joe')">Subscribe $9.99</button>
+            </div>
+
+            <!-- Creator Card 2 -->
+            <div class="creator-card">
+                <div class="creator-header">
+                    <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='50' fill='%23CD853F'/%3E%3Ctext x='50' y='60' font-size='50' text-anchor='middle' fill='white'%3E🐒%3C/text%3E%3C/svg%3E" alt="Creator Avatar" class="creator-avatar">
+                    <div class="creator-info">
+                        <h3>Coconut King</h3>
+                        <p class="creator-handle">@coconut_king_toes</p>
+                    </div>
+                </div>
+                <div class="creator-stats">
+                    <span class="stat">👥 8.3K Subs</span>
+                    <span class="stat">📸 156 Posts</span>
+                </div>
+                <p class="creator-bio">Luxury foot content creator ✨ VIP access available</p>
+                <button class="subscribe-btn" onclick="subscribe('Coconut King')">Subscribe $14.99</button>
+            </div>
+
+            <!-- Creator Card 3 -->
+            <div class="creator-card">
+                <div class="creator-header">
+                    <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='50' fill='%238B6F47'/%3E%3Ctext x='50' y='60' font-size='50' text-anchor='middle' fill='white'%3E🦍%3C/text%3E%3C/svg%3E" alt="Creator Avatar" class="creator-avatar">
+                    <div class="creator-info">
+                        <h3>Paw Master</h3>
+                        <p class="creator-handle">@paw_master_pro</p>
+                    </div>
+                </div>
+                <div class="creator-stats">
+                    <span class="stat">👥 15.2K Subs</span>
+                    <span class="stat">📸 312 Posts</span>
+                </div>
+                <p class="creator-bio">Elite content curator 🏆 Behind the scenes access</p>
+                <button class="subscribe-btn" onclick="subscribe('Paw Master')">Subscribe $19.99</button>
+            </div>
+
+            <!-- Creator Card 4 -->
+            <div class="creator-card">
+                <div class="creator-header">
+                    <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='50' fill='%236B4423'/%3E%3Ctext x='50' y='60' font-size='50' text-anchor='middle' fill='white'%3E🐵‍🦓%3C/text%3E%3C/svg%3E" alt="Creator Avatar" class="creator-avatar">
+                    <div class="creator-info">
+                        <h3>Jungle Pearl</h3>
+                        <p class="creator-handle">@junglePearl_feet</p>
+                    </div>
+                </div>
+                <div class="creator-stats">
+                    <span class="stat">👥 9.8K Subs</span>
+                    <span class="stat">📸 201 Posts</span>
+                </div>
+                <p class="creator-bio">Exotic content 💎 Weekly exclusive shoots</p>
+                <button class="subscribe-btn" onclick="subscribe('Jungle Pearl')">Subscribe $12.99</button>
+            </div>
+
+            <!-- Creator Card 5 -->
+            <div class="creator-card">
+                <div class="creator-header">
+                    <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='50' fill='%23A0522D'/%3E%3Ctext x='50' y='60' font-size='50' text-anchor='middle' fill='white'%3E🐵%3C/text%3E%3C/svg%3E" alt="Creator Avatar" class="creator-avatar">
+                    <div class="creator-info">
+                        <h3>Toe Dancer</h3>
+                        <p class="creator-handle">@toe_dancer_vibes</p>
+                    </div>
+                </div>
+                <div class="creator-stats">
+                    <span class="stat">👥 7.1K Subs</span>
+                    <span class="stat">📸 89 Posts</span>
+                </div>
+                <p class="creator-bio">Dynamic choreography 💃 New content every day</p>
+                <button class="subscribe-btn" onclick="subscribe('Toe Dancer')">Subscribe $8.99</button>
+            </div>
+
+            <!-- Creator Card 6 -->
+            <div class="creator-card">
+                <div class="creator-header">
+                    <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='50' fill='%23704214'/%3E%3Ctext x='50' y='60' font-size='50' text-anchor='middle' fill='white'%3E🦧%3C/text%3E%3C/svg%3E" alt="Creator Avatar" class="creator-avatar">
+                    <div class="creator-info">
+                        <h3>Monkey Zen</h3>
+                        <p class="creator-handle">@monkey_zen_solo</p>
+                    </div>
+                </div>
+                <div class="creator-stats">
+                    <span class="stat">👥 11.4K Subs</span>
+                    <span class="stat">📸 267 Posts</span>
+                </div>
+                <p class="creator-bio">Meditation & wellness 🧘 Relaxing foot content</p>
+                <button class="subscribe-btn" onclick="subscribe('Monkey Zen')">Subscribe $11.99</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Trending Section -->
+    <section class="trending" id="trending">
+        <h2>Trending Posts</h2>
+        <div class="trending-grid">
+            <!-- Trending Post 1 -->
+            <div class="post-card">
+                <div class="post-image">
+                    <div class="placeholder-image">📸</div>
+                    <span class="post-badge">🔥 Trending</span>
+                </div>
+                <div class="post-content">
+                    <h4>Ultimate Foot Poses Guide</h4>
+                    <p class="post-creator">by @bananajoe_feet</p>
+                    <div class="post-stats">
+                        <span>❤️ 3.2K</span>
+                        <span>💬 245</span>
+                        <span>🔖 89</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Trending Post 2 -->
+            <div class="post-card">
+                <div class="post-image">
+                    <div class="placeholder-image">🎥</div>
+                    <span class="post-badge">⭐ Top Rated</span>
+                </div>
+                <div class="post-content">
+                    <h4>Weekly Exclusive Behind the Scenes</h4>
+                    <p class="post-creator">by @paw_master_pro</p>
+                    <div class="post-stats">
+                        <span>❤️ 5.1K</span>
+                        <span>💬 512</span>
+                        <span>🔖 234</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Trending Post 3 -->
+            <div class="post-card">
+                <div class="post-image">
+                    <div class="placeholder-image">🌟</div>
+                    <span class="post-badge">💎 Premium</span>
+                </div>
+                <div class="post-content">
+                    <h4>VIP Photoshoot Highlights</h4>
+                    <p class="post-creator">by @junglePearl_feet</p>
+                    <div class="post-stats">
+                        <span>❤️ 2.8K</span>
+                        <span>💬 178</span>
+                        <span>🔖 145</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Trending Post 4 -->
+            <div class="post-card">
+                <div class="post-image">
+                    <div class="placeholder-image">🎭</div>
+                    <span class="post-badge">✨ New</span>
+                </div>
+                <div class="post-content">
+                    <h4>Exclusive Q&A with Top Creators</h4>
+                    <p class="post-creator">by @coconut_king_toes</p>
+                    <div class="post-stats">
+                        <span>❤️ 4.5K</span>
+                        <span>💬 389</span>
+                        <span>🔖 201</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Trending Post 5 -->
+            <div class="post-card">
+                <div class="post-image">
+                    <div class="placeholder-image">💃</div>
+                    <span class="post-badge">🎯 Popular</span>
+                </div>
+                <div class="post-content">
+                    <h4>Dance Routine Tutorial</h4>
+                    <p class="post-creator">by @toe_dancer_vibes</p>
+                    <div class="post-stats">
+                        <span>❤️ 1.9K</span>
+                        <span>💬 156</span>
+                        <span>🔖 78</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Trending Post 6 -->
+            <div class="post-card">
+                <div class="post-image">
+                    <div class="placeholder-image">🧘</div>
+                    <span class="post-badge">🌺 Wellness</span>
+                </div>
+                <div class="post-content">
+                    <h4>Meditation & Foot Massage Series</h4>
+                    <p class="post-creator">by @monkey_zen_solo</p>
+                    <div class="post-stats">
+                        <span>❤️ 3.7K</span>
+                        <span>💬 267</span>
+                        <span>🔖 156</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>About</h4>
+                <p>Only feetMonkeys is the premier platform for exclusive monkey content creators.</p>
+            </div>
+            <div class="footer-section">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">Creators</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Follow Us</h4>
+                <div class="social-links">
+                    <a href="#">Twitter 🐦</a>
+                    <a href="#">Instagram 📱</a>
+                    <a href="#">Discord 💬</a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Only feetMonkeys. All rights reserved. 🐵</p>
+        </div>
+    </footer>
+
+    <!-- Modal -->
+    <div id="myModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <h2>Join Only feetMonkeys</h2>
+            <p>Create your account to explore exclusive monkey content</p>
+            <form class="modal-form" onsubmit="handleSignup(event)">
+                <input type="text" placeholder="Username" required>
+                <input type="email" placeholder="Email" required>
+                <input type="password" placeholder="Password" required>
+                <label>
+                    <input type="checkbox" required>
+                    I agree to the terms and conditions
+                </label>
+                <button type="submit" class="submit-btn">Create Account</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Notification -->
+    <div id="notification" class="notification"></div>
+
+    <script src="script.js"></script>
+</body>
+</html>
